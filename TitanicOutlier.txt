@@ -1,0 +1,28 @@
+import pandas as pd
+
+# Load the Titanic dataset
+df = pd.read_csv('titanic.csv')
+
+# List the features and their types
+print(df.dtypes)
+
+
+
+import matplotlib.pyplot as plt
+
+# Filter numeric features
+numeric_features = df.select_dtypes(include=['int64', 'float64'])
+
+# Plot histograms for numeric features
+numeric_features.hist(bins=20, figsize=(12, 10))
+plt.tight_layout()
+plt.show()
+
+
+
+
+
+# Plot box plots for numeric features
+numeric_features.plot(kind='box', figsize=(12, 10))
+plt.tight_layout()
+plt.show()
